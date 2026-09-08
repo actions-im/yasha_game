@@ -1,0 +1,69 @@
+/** Spec numbers — keep in one place. */
+
+export const C = {
+  HP_MAX: 100,
+  BOMBS_MAX: 3,
+  INVULN_SEC: 0.8,
+  RING_HEAL: 20,
+  LASER_RATE: 8,
+  LASER_COOLDOWN: 1 / 8,
+  LASER_SPEED: 180,
+  LASER_LIFE: 1.15,
+  LASER_RADIUS: 0.45,
+  LASER_DMG_SMALL: 25,
+  LASER_DMG_BOSS: 10,
+  BOMB_SPEED: 55,
+  BOMB_FUSE: 0.75,
+  BOMB_PROXIMITY: 7,
+  BOMB_RADIUS: 20,
+  BOMB_DMG_BOSS: 35,
+  AUTOAIM_DOT: 0.978, // ~12 degrees
+
+  CRUISE_SPEED: 42,
+  BOOST_SPEED: 120,
+  BRAKE_SPEED: 20,
+  RAIL_DURATION: 120,
+  STRAFE_SPEED: 22,
+  YAW_RATE: 1.7,
+  PITCH_RATE: 1.05,
+  PITCH_LIMIT: 0.52,
+  PLAYER_RADIUS: 1.25,
+  ARENA_RADIUS: 130,
+
+  DMG_FIGHTER_BOLT: 8,
+  DMG_TURRET_BOLT: 12,
+  DMG_MISSILE: 18,
+  DMG_SCRAPE: 10,
+  DMG_BOSS_SHOT: 15,
+
+  HP_FIGHTER: 25,
+  HP_INTERCEPTOR: 25,
+  HP_TURRET: 75,
+  HP_NEST: 75,
+  HP_DRONE: 25,
+  HP_GUNBOAT: 150,
+
+  WALKER_LEG_HP: 50,
+  WALKER_CORE_HP: 50,
+  SERPENT_HEAD_HP: 50,
+  FORT_GEN_HP: 50,
+  FORT_CORE_HP: 50,
+  HEAD_HP: 400,
+
+  SCORE_FIGHTER: 100,
+  SCORE_INTERCEPTOR: 120,
+  SCORE_TURRET: 150,
+  SCORE_NEST: 160,
+  SCORE_DRONE: 90,
+  SCORE_GUNBOAT: 250,
+  SCORE_BOSS: 5000,
+
+  CORRIDOR: {
+    planet: { x: 16, y: 11 },
+    canyon: { x: 8, y: 8 },
+    space: { x: 13, y: 9 },
+    storm: { x: 12, y: 9 },
+  },
+};
+
+export const STAGES = ["planet", "canyon", "space", "storm"];

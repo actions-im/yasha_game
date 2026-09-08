@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <title>AERO SHOT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=play29" />
+</head>
+<body>
+  <canvas id="gl"></canvas>
+
+  <div id="vignette"></div>
+
+  <div id="hud" class="hidden">
+    <div id="hp-wrap">
+      <div>
+        <div id="hp-label">HULL</div>
+        <div id="hp-track" class="ok"><div id="hp-fill"></div></div>
+      </div>
+      <div id="bombs"></div>
+    </div>
+    <div id="score">000000</div>
+    <div id="etime">RAIL 2:00</div>
+    <div id="fps">60 FPS</div>
+    <div id="boss-hud" class="hidden">
+      <div id="boss-label">BOSS</div>
+      <div id="boss-track"><div id="boss-fill"></div></div>
+    </div>
+  </div>
+  <div id="hint" class="hidden">ARROWS STEER · MOUSE AIMS · CLICK GUNS · SPACE BOMB · L-SHIFT BOOST · R-SHIFT BRAKE · ENTER REVERSE · ESC PAUSE</div>
+  <div id="boss-direction" class="hidden"><span>➤</span><small>BOSS</small></div>
+  <div id="flight-help" class="hidden">FREE FLIGHT · Arrows turn & climb · Hold right Shift to brake · Enter reverses<br>Hit any part of the boss to damage its hull.</div>
+  <div id="combat-feedback" class="hidden" aria-live="polite"></div>
+  <div id="banner" class="hidden"></div>
+  <div id="reticle" class="hidden"></div>
+
+  <div id="map" class="overlay">
+    <h1>AERO SHOT</h1>
+    <div class="tag">SELECT A WARZONE · BUILD 27</div>
+    <div class="routes">
+      <button class="route planet" data-stage="planet">
+        <div class="num">ROUTE 01</div>
+        <div class="swatch"></div>
+        <h2>VERDANT APPROACH</h2>
+        <p>Green hills and stone ruins. Fighters, turrets, four-legged walker.</p>
+      </button>
+      <button class="route canyon" data-stage="canyon">
+        <div class="num">ROUTE 02</div>
+        <div class="swatch"></div>
+        <h2>SAND TRENCH</h2>
+        <p>Tight canyon walls. Interceptors, missiles, winged serpent.</p>
+      </button>
+      <button class="route space" data-stage="space">
+        <div class="num">ROUTE 03</div>
+        <div class="swatch"></div>
+        <h2>NEON TRENCH</h2>
+        <p>Capital-ship corridor, then open void. Drones, gunboats, fortress.</p>
+      </button>
+      <button class="route storm locked" data-stage="storm" disabled>
+        <div class="num">ROUTE 04</div>
+        <div class="swatch"></div>
+        <h2>STORM SPIRE</h2>
+        <p>Locked. Beat routes 01, 02, and 03 to unlock.</p>
+      </button>
+    </div>
+    <div class="controls-note">
+      LEFT-HANDED LAYOUT<br />
+      ARROWS = FLY &nbsp;·&nbsp; UP = CLIMB &nbsp;·&nbsp; DOWN = DIVE<br />
+      MOUSE AIMS · CLICK = LASERS &nbsp;·&nbsp; SPACE = BOMB<br />
+      LEFT SHIFT = BOOST &nbsp;·&nbsp; RIGHT SHIFT = BRAKE &nbsp;·&nbsp; ENTER = REVERSE (BOSS)<br />
+      ESC = PAUSE
+    </div>
+  </div>
+
+  <div id="pause" class="overlay hidden">
+    <h2>PAUSED</h2>
+    <button class="menu-btn" id="btn-resume">RESUME</button>
+    <button class="menu-btn" id="btn-map">COURSE MAP</button>
+  </div>
+
+  <div id="result" class="overlay hidden">
+    <div id="result-title">STAGE CLEAR</div>
+    <div id="result-sub"></div>
+    <button class="menu-btn hidden" id="btn-checkpoint">RETRY BOSS</button>
+    <button class="menu-btn" id="btn-retry">RETRY ROUTE</button>
+    <button class="menu-btn" id="btn-result">COURSE MAP</button>
+  </div>
+
+  <script type="module" src="js/game.js?v=environment32"></script>
+</body>
+</html>
